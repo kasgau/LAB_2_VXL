@@ -102,7 +102,6 @@ int main(void)
     /* USER CODE END WHILE */
 	  if(timer1_flag == 1)
 	 	  {   setTimer1(50);
-	 	      HAL_GPIO_TogglePin(GPIOA, LED_RED_Pin);
 	 		  switch(led_status)
 	 		  {
 	 		      case 0:
