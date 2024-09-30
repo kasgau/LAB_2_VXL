@@ -95,34 +95,60 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(50);
   int led_status = 1;
+  setTimer1(100);
+  setTimer2(50);
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(timer1_flag == 1)
-	 	  {   setTimer1(50);
-	 	      HAL_GPIO_TogglePin(GPIOA, LED_RED_Pin);
-	 		  switch(led_status)
-	 		  {
+	if(timer1_flag == 1)
+	 	{
+	      HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
+	      setTimer1(100);
+	    }
+
+	if(timer2_flag == 1)
+	    {
+		setTimer2(50);
+
+		switch(led_status)
+	 	   {
 	 		      case 0:
 	 		    	  HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
-	 		    	  HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN1_Pin | EN2_Pin | EN3_Pin, SET);
+
 	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_0_Pin | SEG_3_Pin | SEG_4_Pin | SEG_5_Pin | SEG_6_Pin, SET);
 	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_1_Pin | SEG_2_Pin, RESET);
 	 		    	  led_status = 1;
 	 		    	  break;
 	 		      case 1:
-	 		    	  HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
 	 		    	  HAL_GPIO_WritePin(GPIOA, EN1_Pin, RESET);
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN2_Pin | EN3_Pin, SET);
+
 	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_2_Pin | SEG_5_Pin , SET);
 	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_0_Pin | SEG_1_Pin |SEG_3_Pin | SEG_4_Pin | SEG_6_Pin, RESET);
+	 		    	  led_status = 2;
+	 		    	  break;
+	 		      case 2:
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN2_Pin, RESET);
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN3_Pin, SET);
+
+	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_4_Pin | SEG_5_Pin , SET);
+	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_0_Pin | SEG_1_Pin |SEG_2_Pin | SEG_3_Pin | SEG_6_Pin, RESET);
+	 		    	  led_status = 3;
+	 		    	  break;
+	 		      case 3:
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN3_Pin, RESET);
+	 		    	  HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin, SET);
+
+	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_6_Pin, SET);
+	 		    	  HAL_GPIO_WritePin(GPIOB, SEG_0_Pin | SEG_1_Pin | SEG_2_Pin | SEG_3_Pin | SEG_4_Pin | SEG_5_Pin , RESET);
 	 		    	  led_status = 0;
 	 		    	  break;
 	 		      default:
 	 		    	  break;
-	 		  }
 	 	  }
+	 	}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
