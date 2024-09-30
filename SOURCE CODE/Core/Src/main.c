@@ -96,7 +96,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(100);
-  setTimer2(50);
+  setTimer2(1);
   int index =0;
   while (1)
   {
@@ -105,7 +105,8 @@ int main(void)
 	  if(timer2_flag == 1)
 	  {
 		  update7SEG(index++);
-		  setTimer2(50);
+		  HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
+		  setTimer2(1);
 	  }
 
 
