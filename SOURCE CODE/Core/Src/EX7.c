@@ -5,7 +5,7 @@
  *      Author: kanza
  */
 
-#include <EX5.h>
+#include <EX7.h>
   const int MAX_LED = 4;
    int index_led = 0;
    int led_buffer[4] = {2, 1, 2, 4};

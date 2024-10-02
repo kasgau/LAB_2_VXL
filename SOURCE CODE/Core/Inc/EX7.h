@@ -5,8 +5,8 @@
  *      Author: kanza
  */
 
-#ifndef INC_EX5_H_
-#define INC_EX5_H_
+#ifndef INC_EX7_H_
+#define INC_EX7_H_
 #include "main.h"
 
 extern const int MAX_LED;
@@ -20,4 +20,4 @@ extern int second;
 void update7SEG(int index);
 void updateClockBuffer();
 
-#endif /* INC_EX5_H_ */
+#endif /* INC_EX7_H_ */
