@@ -20,7 +20,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <EX4.h>
+#include <EX5.h>
 #include "software_timer.h"
 /* USER CODE END Includes */
 
@@ -96,20 +96,40 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(100);
-  setTimer2(1);
+  setTimer2(50);
   int index =0;
+   int hour = 15, minute = 3, second = 55;
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(index >=4) index =0;
-	  if(timer2_flag == 1)
+
+	  if(timer1_flag == 1)
 	  {
-		  update7SEG(index++);
-		  HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
-		  setTimer2(1);
+		    second++;
+		    if(second >= 60)
+		    {
+		    	minute++;
+		    	second = 0;
+		    }
+		    if(minute >= 60)
+		    {
+		    	hour++;
+		    	minute = 0;
+		    }
+		    if(hour >= 24)
+		    {
+		    	hour = 0;
+		    }
+		  setTimer1(100);
 	  }
 
-
+	  if(timer2_flag == 1)
+	  {
+		  if(index >=4) index =0;
+		  updateClockBuffer(hour, minute)	;
+		  update7SEG(index++);
+		  setTimer2(50);
+	  }
 
     /* USER CODE BEGIN 3 */
   }

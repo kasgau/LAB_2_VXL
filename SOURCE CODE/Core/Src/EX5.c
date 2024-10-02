@@ -5,13 +5,13 @@
  *      Author: kanza
  */
 
-#include <EX4.h>
+#include <EX5.h>
   const int MAX_LED = 4;
    int index_led = 0;
-   int led_buffer[4] = {2, 0, 2, 4};
+   int led_buffer[4] = {2, 1, 2, 4};
+
    void update7SEG(int index)
    {
-
 
    	switch(index)
    	{
@@ -298,4 +298,32 @@
    	    default:
    			break;
           }
+   }
+
+   void  updateClockBuffer(int hour, int minute)
+   {
+		if(hour < 10)
+		{
+			led_buffer[0] = 0;
+			led_buffer[1] = hour;
+		}
+
+		if(hour >= 10 && hour <= 24)
+		{
+			led_buffer[0] = hour / 10;
+			led_buffer[1] = hour % 10;
+		}
+
+		if(minute < 10)
+		{
+			led_buffer[2] = 0;
+			led_buffer[3] = minute;
+		}
+
+		if(minute >= 10 && minute <= 60)
+		{
+			led_buffer[2] = minute / 10;
+			led_buffer[3] = minute % 10;
+		}
+
    }
