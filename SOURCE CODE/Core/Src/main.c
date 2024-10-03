@@ -109,7 +109,7 @@ int main(void)
 	 		  setTimer1(10);
 	 		  if(index_led_matrix >= 8)
 	 			  {index_led_matrix = 0;
-//	 			 shiftDown();
+	 			 shiftDown();
 	 			  }
 	 		  updateLEDMatrix(index_led_matrix++);
 
