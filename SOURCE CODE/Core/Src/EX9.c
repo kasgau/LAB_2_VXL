@@ -332,7 +332,7 @@
 //   	   	   	   	   	    	 0    1      2    3     4     5     6      7
    uint8_t matrix_buffer[8] = {0x3C, 0x66, 0x66, 0x66, 0x7E, 0x66, 0x66, 0x66};
 
-   void resetAllLEDMatrix()
+   void resetLEDMatrix()
     {
     	HAL_GPIO_WritePin(GPIOB, ROW2_Pin | ROW3_Pin | ROW4_Pin | ROW5_Pin | ROW6_Pin | ROW7_Pin | ROW0_Pin | ROW1_Pin, SET);
     }
@@ -366,7 +366,7 @@
 
     void updateLEDMatrix(int index)
     {
-		resetAllLEDMatrix();
+		resetLEDMatrix();
     	switch(index)
     	{
 

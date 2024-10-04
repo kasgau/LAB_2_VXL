@@ -1,6 +1,6 @@
 ../Core/Src/EX9.c:14:9:update7SEG	53
 ../Core/Src/EX9.c:304:10:updateClockBuffer	7
-../Core/Src/EX9.c:335:9:resetAllLEDMatrix	1
+../Core/Src/EX9.c:335:9:resetLEDMatrix	1
 ../Core/Src/EX9.c:340:10:displayLEDMatrix	7
 ../Core/Src/EX9.c:367:10:updateLEDMatrix	9
 ../Core/Src/EX9.c:429:10:shiftDown	1

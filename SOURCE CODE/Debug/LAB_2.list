@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000aad1  00000000  00000000  00023f57  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000823fe  00000000  00000000  0002ea28  2**0
+ 18 .debug_str    000823fb  00000000  00000000  0002ea28  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000b0e26  2**0
+ 19 .comment      00000043  00000000  00000000  000b0e23  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002734  00000000  00000000  000b0e6c  2**2
+ 20 .debug_frame  00002734  00000000  00000000  000b0e68  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000061  00000000  00000000  000b35a0  2**0
+ 21 .debug_line_str 00000061  00000000  00000000  000b359c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -78,19 +78,19 @@ Disassembly of section .text:
  8000144:	20000018 	.word	0x20000018
  8000148:	08001d64 	.word	0x08001d64
 
-0800014c <resetAllLEDMatrix>:
+0800014c <resetLEDMatrix>:
 
 //   	   	   	   	   	    	 0    1      2    3     4     5     6      7
    uint8_t matrix_buffer[8] = {0x3C, 0x66, 0x66, 0x66, 0x7E, 0x66, 0x66, 0x66};
 
-   void resetAllLEDMatrix()
+   void resetLEDMatrix()
     {
  800014c:	b580      	push	{r7, lr}
  800014e:	af00      	add	r7, sp, #0
     	HAL_GPIO_WritePin(GPIOB, ROW2_Pin | ROW3_Pin | ROW4_Pin | ROW5_Pin | ROW6_Pin | ROW7_Pin | ROW0_Pin | ROW1_Pin, SET);
  8000150:	2201      	movs	r2, #1
  8000152:	f44f 417f 	mov.w	r1, #65280	@ 0xff00
- 8000156:	4802      	ldr	r0, [pc, #8]	@ (8000160 <resetAllLEDMatrix+0x14>)
+ 8000156:	4802      	ldr	r0, [pc, #8]	@ (8000160 <resetLEDMatrix+0x14>)
  8000158:	f000 fe06 	bl	8000d68 <HAL_GPIO_WritePin>
     }
  800015c:	bf00      	nop
@@ -195,8 +195,8 @@ Disassembly of section .text:
  8000202:	b082      	sub	sp, #8
  8000204:	af00      	add	r7, sp, #0
  8000206:	6078      	str	r0, [r7, #4]
-		resetAllLEDMatrix();
- 8000208:	f7ff ffa0 	bl	800014c <resetAllLEDMatrix>
+		resetLEDMatrix();
+ 8000208:	f7ff ffa0 	bl	800014c <resetLEDMatrix>
     	switch(index)
  800020c:	687b      	ldr	r3, [r7, #4]
  800020e:	2b07      	cmp	r3, #7

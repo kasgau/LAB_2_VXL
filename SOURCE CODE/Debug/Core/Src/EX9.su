@@ -1,6 +1,6 @@
 ../Core/Src/EX9.c:14:9:update7SEG	16	static
 ../Core/Src/EX9.c:304:10:updateClockBuffer	16	static
-../Core/Src/EX9.c:335:9:resetAllLEDMatrix	8	static
+../Core/Src/EX9.c:335:9:resetLEDMatrix	8	static
 ../Core/Src/EX9.c:340:10:displayLEDMatrix	16	static
 ../Core/Src/EX9.c:367:10:updateLEDMatrix	16	static
 ../Core/Src/EX9.c:429:10:shiftDown	16	static
