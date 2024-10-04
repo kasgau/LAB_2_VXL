@@ -96,7 +96,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(100);
-  setTimer2(10);
+  setTimer2(50);
   setTimer3(100);
 
   int index =0;
@@ -137,7 +137,7 @@ int main(void)
 		  update7SEG(index++);
 
 
-		  setTimer2(10);
+		  setTimer2(50);
 	  }
 
 	  if(timer3_flag == 1)

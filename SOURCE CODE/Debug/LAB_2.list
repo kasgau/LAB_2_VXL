@@ -1362,8 +1362,8 @@ int main(void)
   setTimer1(100);
  8000ae0:	2064      	movs	r0, #100	@ 0x64
  8000ae2:	f000 f94b 	bl	8000d7c <setTimer1>
-  setTimer2(10);
- 8000ae6:	200a      	movs	r0, #10
+  setTimer2(50);
+ 8000ae6:	2032      	movs	r0, #50	@ 0x32
  8000ae8:	f000 f95c 	bl	8000da4 <setTimer2>
   setTimer3(100);
  8000aec:	2064      	movs	r0, #100	@ 0x64
@@ -1465,8 +1465,8 @@ int main(void)
  8000b6c:	f7ff faee 	bl	800014c <update7SEG>
 
 
-		  setTimer2(10);
- 8000b70:	200a      	movs	r0, #10
+		  setTimer2(50);
+ 8000b70:	2032      	movs	r0, #50	@ 0x32
  8000b72:	f000 f917 	bl	8000da4 <setTimer2>
 	  }
 
