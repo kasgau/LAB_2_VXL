@@ -96,7 +96,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(10);
+  setTimer1(1);
   setTimer2(50);
 
    HAL_GPIO_WritePin(GPIOA, DOT_Pin, RESET);
@@ -106,10 +106,9 @@ int main(void)
     /* USER CODE END WHILE */
 	  if(timer1_flag == 1)
 	 	  {
-	 		  setTimer1(10);
+	 		  setTimer1(1);
 	 		  if(index_led_matrix >= 8)
 	 			  {index_led_matrix = 0;
-//	 			 shiftDown();
 	 			  }
 	 		  updateLEDMatrix(index_led_matrix++);
 

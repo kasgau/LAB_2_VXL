@@ -3,4 +3,4 @@
 ../Core/Src/EX9.c:335:9:resetAllLEDMatrix	1
 ../Core/Src/EX9.c:340:10:displayLEDMatrix	7
 ../Core/Src/EX9.c:367:10:updateLEDMatrix	9
-../Core/Src/EX9.c:430:10:shiftDown	1
+../Core/Src/EX9.c:429:10:shiftDown	1
