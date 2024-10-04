@@ -96,16 +96,21 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(100);
-  setTimer2(50);
+  setTimer2(10);
+  setTimer3(100);
+
   int index =0;
    int hour = 15, minute = 3, second = 55;
-   HAL_GPIO_WritePin(GPIOA, DOT_Pin, RESET);
+   HAL_GPIO_WritePin(GPIOA, DOT_Pin, SET);
+
   while (1)
   {
     /* USER CODE END WHILE */
 
+
 	  if(timer1_flag == 1)
 	  {
+
 		    second++;
 		    if(second >= 60)
 		    {
@@ -130,9 +135,16 @@ int main(void)
 		  if(index >=4) index =0;
 		  updateClockBuffer(hour, minute)	;
 		  update7SEG(index++);
-		   HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
 
-		  setTimer2(50);
+
+		  setTimer2(10);
+	  }
+
+	  if(timer3_flag == 1)
+	  {
+		   HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
+		   setTimer3(50);
+
 	  }
 
     /* USER CODE BEGIN 3 */
