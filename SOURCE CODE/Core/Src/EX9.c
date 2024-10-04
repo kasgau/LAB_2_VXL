@@ -370,7 +370,7 @@
     	switch(index)
     	{
 
-    	case 0:
+          case 0:
        	   HAL_GPIO_WritePin(GPIOB, ROW0_Pin, RESET);
        	   displayLEDMatrix(matrix_buffer[index]);
 

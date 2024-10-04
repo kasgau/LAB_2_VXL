@@ -214,7 +214,7 @@ Disassembly of section .text:
  8000238:	08000301 	.word	0x08000301
     	{
 
-    	case 0:
+          case 0:
        	   HAL_GPIO_WritePin(GPIOB, ROW0_Pin, RESET);
  800023c:	2200      	movs	r2, #0
  800023e:	f44f 7180 	mov.w	r1, #256	@ 0x100
